@@ -1,0 +1,31 @@
+Creating local virtual host
+**** /etc/apache/sites-available ******c
+<VirtualHost *:80>
+ServerName tap3
+
+#ServerAdmin webmaster@localhost
+DocumentRoot /var/www/html/tap3/
+<Directory /var/www/html/tap3/>
+#Option Indexes FollowSymLinks MultiViews
+AllowOverride All
+Require all granted
+Order allow,deny
+allow from all
+</Directory>
+
+</VirtualHost>
+
+
+run command * sudo a2ensite (conf name)
+
+sudo gedit /etc/hosts
+
+127.0.0.1	CRK04-S01-W59
+127.0.1.1	CRK04-S01-W59 bounty
+127.0.1.1	CRK04-S01-W59 admin-bounty-backend
+127.0.1.1	CRK04-S01-W59 tap3
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
